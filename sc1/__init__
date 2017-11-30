@@ -1,0 +1,16 @@
+import dom
+import pickle
+
+class SC1:
+  def pickleMarkup(build="buildFile.pickle",filename,markup):
+    f = pickle.pickle(filename)
+    f.pack(filename=markup)
+    return f.build()
+  def unpickleMarkup(buildName,filename):
+    return dom.toprettyxml(pickle.load(buildName + ".pickle").get(filename))
+  def prettify(data):
+    return dom.toprettyxml(data)
+  def parse(filename):
+    return dom.parse(filename)
+  def parseString(data):
+    return dom.parseString(data)
